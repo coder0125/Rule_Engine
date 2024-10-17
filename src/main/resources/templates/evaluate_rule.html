@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Evaluate Rule</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Evaluate a Rule</h2>
+    <form th:action="@{/rules/evaluate}" method="post">
+        <div class="form-group">
+            <label for="ruleString">Rule String:</label>
+            <input type="text" class="form-control" id="ruleString" name="ruleString" required placeholder="Enter rule string">
+        </div>
+        <h4>User Data</h4>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age" name="age" required placeholder="Enter age">
+        </div>
+        <div class="form-group">
+            <label for="department">Department:</label>
+            <input type="text" class="form-control" id="department" name="department" required placeholder="Enter department">
+        </div>
+        <div class="form-group">
+            <label for="salary">Salary:</label>
+            <input type="number" class="form-control" id="salary" name="salary" required placeholder="Enter salary">
+        </div>
+        <div class="form-group">
+            <label for="experience">Experience:</label>
+            <input type="number" class="form-control" id="experience" name="experience" required placeholder="Enter experience">
+        </div>
+        <button type="submit" class="btn btn-primary">Evaluate Rule</button>
+    </form>
+
+    <div class="mt-4">
+        <h4>Evaluation Result:</h4>
+        <p th:text="${result != null} ? (result ? 'Eligible' : 'Not Eligible') : ''"></p>
+    </div>
+    <a class="btn btn-secondary mt-2" th:href="@{/rules/}">Back to Home</a>
+</div>
+</body>
+</html>

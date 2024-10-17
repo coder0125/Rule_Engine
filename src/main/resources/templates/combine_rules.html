@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Combine Rules</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Combine Rules</h2>
+    <form th:action="@{/rules/combine}" method="post">
+        <div class="form-group">
+            <label for="rules">Enter Rule Strings (comma-separated):</label>
+            <textarea class="form-control" id="rules" name="rules" required placeholder="Enter rule strings, separated by commas"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Combine Rules</button>
+    </form>
+
+    <div class="mt-4">
+        <h4>Combined Rule:</h4>
+        <pre th:text="${combinedRule != null} ? ${combinedRule.toString()} : 'No combined rule yet.'"></pre>
+    </div>
+    <a class="btn btn-secondary mt-2" th:href="@{/rules/}">Back to Home</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the Rule Engine</h1>
+    <div class="mt-4">
+        <a class="btn btn-primary" th:href="@{/rules/create}">Create Rule</a>
+        <a class="btn btn-secondary" th:href="@{/rules/combine}">Combine Rules</a>
+        <a class="btn btn-success" th:href="@{/rules/evaluate}">Evaluate Rule</a>
+    </div>
+</div>
+</body>
+</html>
